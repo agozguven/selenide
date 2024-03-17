@@ -7,12 +7,14 @@ public class PageManager {
 
     public ElementPage elementPage;
 
+
     public PageManager() {
 
         DriverFactory.initDriver();
 
 
         elementPage = PageFactory.buildElementPage();
+
 
     }
 }
