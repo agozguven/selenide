@@ -10,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ElementSteps extends BaseTest {
     PageManager pageManager = new PageManager();
+
     @Given("Open demoqa site")
     public void openDemoqaSite() {
         pageManager.elementPage.open();
