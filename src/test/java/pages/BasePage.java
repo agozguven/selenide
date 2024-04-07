@@ -15,6 +15,7 @@ public abstract class BasePage {
     }
 
     public void open() {
+        logger.info("Opening page " + pageUrl);
         String url = propertyManager.getProperty("APP_URL") ;
         Selenide.open(url);
     }
