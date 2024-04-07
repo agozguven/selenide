@@ -4,6 +4,7 @@ import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -23,12 +24,13 @@ public class DriverFactory {
 
     public static String browser;
     static PropertyManager propertyManager = new PropertyManager();
+    static final Logger logger = Logger.getLogger(DriverFactory.class);
 
     public static void initDriver() {
 
         // Get settings from command line
 
-
+        logger.info("Driver yükleniyor....");
         // Check if remote driver
 
         if (Objects.equals(propertyManager.getProperty("BROWSER"), "REMOTE")) {
@@ -114,12 +116,14 @@ public class DriverFactory {
     }
 
     public static void clearCookies() {
+        logger.info("Cookies temizleniyor....");
         open(propertyManager.getProperty("APP_URL"));
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();
     }
 
     public static void close() {
+        logger.info("Browser kapatılıyor....");
         currentDriver().quit();
     }
 }

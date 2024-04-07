@@ -2,12 +2,12 @@ Feature: As a user check elements on Elements Page
 
   Background:
     Given Open demoqa site
-
+  @testClickMeButton
   Scenario: Test ClickMeButton on Buttons Element
     When Click Buttons
     When Click ClickMeButton
     Then ClickMeButton is clicked successfully
-
+  @testWebtable
   Scenario: Add and edit item on Webtable Element
       When Click Webtables
       When Enter inputs for new item and click submit button

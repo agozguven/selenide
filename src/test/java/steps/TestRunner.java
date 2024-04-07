@@ -12,7 +12,8 @@ import io.cucumber.testng.CucumberOptions;
                 "html:build/cucumber-reports/cucumber-pretty",
                 "json:build/cucumber-reports/CucumberTestReport.json",
                 "rerun:build/cucumber-reports/rerun.txt"
-        }
+        },
+        tags = "@testClickMeButton"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 }
